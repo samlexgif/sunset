@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<h2>Blood Sugar Readings</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Reading</th>
+            <th>Advice</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reading in readings %}
+        <tr>
+            <td>{{ reading.date }}</td>
+            <td>{{reading.time}}</td>
+            <td>{{ reading.reading }}</td>
+            <td>
+                {% if reading.reading > 140 %}
+                    <span style="color: red;">High! Consult your doctor.watch your diet,and exercise more</span>
+                {% else %}
+                    Normal
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

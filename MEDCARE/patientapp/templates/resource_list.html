@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{% block content %}
+<h2>News Feed</h2>
+<ul>
+    {% for resource in resources %}
+        <h1><a href="{% url 'resource_detail' resource.id %}">{{ resource.title }}</a></h1>
+        <p>{{resource.created_at}}</p>
+    {% endfor %}
+</ul>
+{% endblock%}

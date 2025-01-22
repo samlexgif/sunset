@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Nutrition News Feed</h2>
+<ul>
+    {% for article in articles %}
+    <li>
+        <h1>{{nutrition.title }}</h1>
+         <p>{{nutriton.image}}</p>
+        <p>{{ nutrition.content }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
